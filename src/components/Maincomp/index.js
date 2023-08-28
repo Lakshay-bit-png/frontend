@@ -6,6 +6,7 @@ import Auth4Component from "../Page4";
 import Auth5Component from "../Page5";
 import Auth6Component from "../Page6";
 import Auth7Component from "../Page7";
+import Uploadpic from "../Page8 ";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import CommonLanding from "../Landing/Post";
@@ -22,7 +23,7 @@ import CheckProfile from "../CheckProfile";
 import { DisplayPosts } from "../Landing/DisplayPosts";
 import Otherpost from "../Landing/Otherpost";
 import Anotherprofile from "../Landing/anotherprofile";
-import Uploadpic from "../Page8 ";
+
 
 function AuthPage({ userData, setProgress }) {
   // console.log(userData);
