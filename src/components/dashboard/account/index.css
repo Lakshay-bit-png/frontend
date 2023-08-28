@@ -1,0 +1,17 @@
+.edit-input {
+    background-color: black;
+    /* Initial background color */
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid black;
+    /* Add black border */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.edit-input:hover {
+    background-color: white;
+    /* Change background color on hover */
+    color: black;
+    /* Change text color on hover */
+}

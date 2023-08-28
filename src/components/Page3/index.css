@@ -1,0 +1,114 @@
+.main-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+.main-3 h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+}
+.head-3 div {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+}
+.head-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.row-1,
+.row-2 {
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.row-1 div,
+.row-2 div {
+  border-radius: 50px;
+  background-color: white;
+  width: 94px;
+  display: flex;
+  padding: 12px 20px 16px 12px;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+
+  height: 32px;
+}
+
+.other {
+  transition: 0.3s;
+}
+
+.explain {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: auto;
+  
+  margin-right: auto;
+  gap: 10px;
+}
+.textarea-skills {
+  width: 40vmax;
+  outline: none;
+  border: none;
+  margin-right:auto;
+  
+  height: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  resize: none;
+}
+
+.next button:hover {
+  background-color: #1fa9ab;
+}
+
+.next {
+  display: flex;
+  place-content: center;
+  margin-top: 10px;
+}
+.next button {
+  width: 83px;
+  height: 56px;
+  color: white;
+  border: none;
+  background-color: rgb(108, 171, 249);
+  border-radius: 16px;
+}
+.colorchange {
+  background-color: greenyellow;
+}
+
+/* Style for selected skill blocks */
+.selectedSDF {
+    border: 2px solid #007bff;
+    /* Blue border */
+    outline: none;
+    /* Remove default outline */
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+/* Style for hovered skill blocks */
+.options .row-1>div:hover,
+.options .row-2>div:hover {
+    background-color: #f4f4f4;
+    /* Light gray background */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

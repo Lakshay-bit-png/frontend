@@ -1,0 +1,57 @@
+.main-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+ 
+}
+.main-5 h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.head-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 50px;
+}
+.details-college{display:flex;flex-direction:column;align-items:center;width:100%;justify-content: center;gap:50px;}
+.college-name{display:flex;
+                flex-wrap:wrap;
+                justify-content: center;
+              gap:30px;}
+.state,.college,.city{display:flex;flex-direction:column;gap:10px;}
+.state-choices,.college-choices,.city-choices{width:250px;border:none;border-radius:10px;height:40px;padding:5px;}
+.next-5 {
+  display: flex;
+  justify-content: center;
+}
+
+.gradyear{display:flex;flex-direction:column;gap:5px}
+.nextbtn-5 {
+  width: 83px;
+  height: 56px;
+  color: white;
+  border: none;
+
+  background-color: rgb(108, 171, 249);
+  border-radius: 16px;
+}
+
+.nextbtn-5:hover {
+  background-color: #1fa9ab;
+}
+
+/* ====================ACTIVE STATUS ON INPUT FIELDS========================== */
+.college-name:focus,
+.year:focus {
+  border: 1px solid #007bff;
+  /* Blue border */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Blue box shadow */
+  outline: none;
+  /* Remove default outline */
+}
