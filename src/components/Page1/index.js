@@ -16,7 +16,7 @@ import { linkedInAuth } from "../../api/userRequest";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
-import Toast from "../toast";
+
 
 function Page1({ setProgress }) {
   const navigate = useNavigate();
