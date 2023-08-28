@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { getUser } from "./api/userRequest";
-import Toast from "./components/toast";
+
 import AuthPage from "./components/Maincomp";
 import LoadingBar from "react-top-loading-bar";
 
