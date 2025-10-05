@@ -9,7 +9,7 @@ import ApiService from './ApiService';
 class AuthService extends ApiService {
   constructor() {
     // Call the parent constructor with the base URL for the authentication endpoints.
-    super('http://localhost:3001/api/users'); // Adjust the base URL as needed
+    super('https://product-project-1t31.onrender.com/api/users'); // Adjust the base URL as needed
   }
 
   /**

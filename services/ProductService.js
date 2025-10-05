@@ -1,7 +1,7 @@
 import ApiService from './ApiService';
 
 // Use environment variable for backend URL
-const BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001/api/product';
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || 'https://product-project-1t31.onrender.com/api/product';
 
 class ProductService extends ApiService {
     constructor() {
