@@ -70,7 +70,7 @@ const ProductCard = ({ userId, product, onDelete }) => {
           <div className="flex items-end justify-between">
             <div>
               <span className="text-3xl font-extrabold text-gray-900">
-                ${parseFloat(finalTotalPrice/stock || 0).toFixed(2)}
+                ${parseFloat(price*(1-(discountFactor/100)) || 0).toFixed(2)}
               </span>
               {/* Show original price and discount only if a discount exists */}
               {discountFactor > 0 && (
