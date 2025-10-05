@@ -12,7 +12,7 @@ class ProductService extends ApiService {
         return this.request('/add', 'POST', productData,true,true);
     }
 
-    async getProducts({ sortBy = 'name', sortOrder = 'asc', page = 1, limit = 100, categories = [], ownedByMe = false } = {}) {
+    async getProducts({ sortBy = 'name', sortOrder = 'asc', page = 1, limit = 10, categories = [], ownedByMe = false } = {}) {
     const categoryParam = categories.length ? `&categories=${encodeURIComponent(categories.join(','))}` : '';
     const ownedByMeParam = ownedByMe ? '&ownedByMe=1' : '';
     const query = `?sortBy=${sortBy}&sortOrder=${sortOrder}&page=${page}&limit=${limit}${categoryParam}${ownedByMeParam}`;

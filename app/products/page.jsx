@@ -302,8 +302,10 @@ const ProductsPage = () => {
             </div>
 
             {isLoading && (
-                <p className="text-center text-gray-500 my-4">Loading more products...</p>
-            )}
+  <p className="text-center my-6 text-lg font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse animate-bounce">
+    🔄 Loading more products...
+  </p>
+)}
 
             {error && <p className="text-center text-red-500 my-4">{error}</p>}
         </div>

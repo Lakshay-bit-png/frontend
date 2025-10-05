@@ -36,7 +36,7 @@ const ProductCard = ({ userId, product, onDelete }) => {
     // --- Main Card Container ---
     // Added group for hover effects on child elements and smooth transitions.
     // The hover effect lifts the card and increases its shadow for a 3D effect.
-    <div className={`group bg-white border border-gray-200 rounded-lg shadow-md flex flex-col
+    <div className={`group bg-white border border-gray-200 rounded-lg shadow-md flex flex-col max-w-100
                     transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1
                     ${isOwner ? '' : 'opacity-60'}`}>
       
@@ -62,7 +62,7 @@ const ProductCard = ({ userId, product, onDelete }) => {
         {/* --- Product Description --- */}
         {/* 'flex-grow' allows this section to expand and push the price/buttons to the bottom. */}
         <p className="text-gray-600 text-sm mt-2 mb-4 flex-grow">
-          {description ? `${description.substring(0, 100)}...` : 'No description available.'}
+          {description ? `${description.substring(0, 6)}...` : 'No description available.'}
         </p>
         
         {/* --- Pricing Section --- */}
