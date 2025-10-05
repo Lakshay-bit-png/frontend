@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Product Management Frontend
 
-## Getting Started
+A modern, responsive frontend application built with Next.js and Tailwind CSS for managing a product inventory. It includes user authentication, product creation, editing, deletion, and a dynamic interface for browsing products with filtering and search capabilities.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Table of Contents
+
+-   [Features](#features-✨)
+-   [Tech Stack](#tech-stack-🛠️)
+-   [Project Structure](#project-structure-📂)
+-   [Getting Started](#getting-started-🚀)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+-   [Environment Variables](#environment-variables-⚙️)
+-   [API Services](#api-services-📡)
+-   [Key Components](#key-components-🧩)
+
+---
+
+## Features ✨
+
+-   **User Authentication**: Secure JWT-based login and signup functionality.
+-   **Product CRUD**: Full Create, Read, Update, and Delete capabilities for products.
+-   **Dynamic Product Listing**:
+    -   Infinite scroll for seamless browsing.
+    -   Advanced filtering by category.
+    -   Sorting by various fields (name, price, stock, etc.).
+    -   Debounced search functionality for instant results.
+-   **Ownership Control**: Users can only edit or delete the products they have created.
+-   **Responsive Design**: A mobile-first interface that looks great on all devices, from phones to desktops.
+-   **Notifications**: User-friendly toast notifications for actions like success or failure.
+
+---
+
+## Tech Stack 🛠️
+
+-   **Framework**: [Next.js](https://nextjs.org/) (using the App Router)
+-   **Library**: [React](https://reactjs.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **API Communication**: `fetch` API / Axios
+-   **Notifications**: `react-hot-toast`
+
+---
+
+## Project Structure 📂
+
+The project follows a feature-oriented structure to keep the codebase organized and maintainable.
+
+```
+/
+├── app/                  # Next.js App Router for pages and layouts
+│   ├── login/
+│   ├── products/
+│   │   ├── [id]/edit/    # Dynamic route for editing a product
+│   │   └── new/          # Page for creating a new product
+│   ├── signup/
+│   ├── globals.css       # Global styles
+│   └── layout.js         # Root layout
+│
+├── components/           # Reusable React components
+│   ├── auth/             # Authentication-related components (LoginForm)
+│   ├── common/           # Shared components (Header, Buttons, etc.)
+│   └── products/         # Product-related components (ProductCard, ProductForm)
+│
+├── services/             # API communication layer
+│   ├── ApiService.js     # Base API client (e.g., Axios or fetch wrapper)
+│   ├── AuthService.js    # Handles auth endpoints (login, signup)
+│   └── ProductService.js # Handles product CRUD and search endpoints
+│
+└── .env                  # Environment variables (API URL, etc.)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Getting Started 🚀
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Follow these instructions to get the project up and running on your local machine.
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+-   [Node.js](https://nodejs.org/en/) (v18.x or later)
+-   `npm` or `yarn`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repository-url>
+    cd product_frontend
+    ```
 
-## Deploy on Vercel
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Set up environment variables:**
+    Create a new file named `.env` in the root of the project and add the necessary variables. See the [Environment Variables](#environment-variables-⚙️) section below.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+The application should now be running at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Environment Variables ⚙️
+
+For the application to connect to your backend API, you must create a `.env` file in the project root. Copy the example below and replace the URL with your actual backend API endpoint.
+
+**.env.example**
+```
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
+```
+
+---
+
+## API Services 📡
+
+The `services` directory abstracts all backend communication.
+
+-   **`ApiService.js`**: A central instance of your HTTP client (e.g., Axios). It should be configured to handle base URLs and authentication headers (JWT tokens) automatically.
+-   **`AuthService.js`**: Contains functions for user authentication, such as `login(credentials)` and `signup(userInfo)`.
+-   **`ProductService.js`**: Manages all API calls related to products, including `getProducts(params)`, `searchProducts(params)`, `createProduct(data)`, `updateProduct(id, data)`, and `deleteProduct(id)`.
+-   **`Common.js`**: Used for fetching common or configuration data from the backend, such as a list of available product categories for the filter dropdowns.
+
+---
+
+## Key Components 🧩
+
+-   **`ProductCard.jsx`**: A versatile component used to display a single product's information in the grid. It includes logic for displaying price, stock status, and owner-specific action buttons (Edit/Delete).
+-   **`ProductForm.jsx`**: A reusable form component for both creating a new product and editing an existing one. It handles form state, validation, and submission.
+-   **`LoginForm.jsx` / `SignupForm.jsx`**: Components that manage the user interface and state for the authentication forms.
